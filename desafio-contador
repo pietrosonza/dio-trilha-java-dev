@@ -1,0 +1,39 @@
+package est.pietro.desafios;
+
+import java.util.Scanner;
+
+public class Contador {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int parametroUm = sc.nextInt();
+        int parametroDois = sc.nextInt();
+
+        try {
+            contar(parametroUm, parametroDois);
+
+        } catch (ParametrosInvalidosException e) {
+            System.out.println("O segundo paramêtro deve ser maior que o primeiro");
+
+        }
+
+        scanner.close();
+    }
+
+    static void contar(int parametroUm, int parametroDois) throws ParametrosInvalidosException {
+
+        if (parametroUm < parametroDois) {
+            int contador = parametroDois - parametroUm;
+            System.out.println("iniciando contagem");
+
+            for (int i = 0; i < contador; i++) {
+                System.out.println("Imprimindo o número " + parametroUm);
+                System.out.println("Imprimindo o número " + parametroDois);
+            }
+
+        } else {
+            throw new ParametrosInvalidosException();
+        }
+    }
+}
